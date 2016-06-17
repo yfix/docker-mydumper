@@ -11,6 +11,8 @@ and I like nothing from currently existing implementations, so creating my own o
 
 ## Useful links
 
+* https://www.percona.com/blog/2015/11/12/logical-mysql-backup-tool-mydumper-0-9-1-now-available/
+* https://www.percona.com/blog/2015/09/21/containing-logical-backups-mydumper-docker/
 * https://launchpad.net/mydumper
 * https://github.com/maxbube/mydumper
 * https://github.com/tophatmonocle/docker-mydumper
