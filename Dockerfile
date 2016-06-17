@@ -1,4 +1,6 @@
-FROM ubuntu:trusty
+FROM yfix/baseimage
+
+MAINTAINER Yuri Vysotskiy (yfix) <yfix.dev@gmail.com>
 
 ENV MYDUMPER_VERSION_MAJOR 0.9
 ENV MYDUMPER_VERSION 0.9.2
@@ -19,3 +21,9 @@ RUN wget https://launchpad.net/mydumper/$MYDUMPER_VERSION_MAJOR/$MYDUMPER_VERSIO
     cmake . -DCMAKE_INSTALL_PREFIX=/usr/local && \
     make && \
     make install
+
+ADD mydumper.sh /mydumper.sh
+ADD myloader.sh /myloader.sh
+
+WORKDIR /
+CMD /mydumper.sh
