@@ -35,8 +35,13 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
     libpcre3-dev \
 \
+  && apt-get install -y \
+    libglib2.0-0 \
+    libmysqlclient-dev \
+\
   && apt-get autoremove -y \
   && apt-get clean -y \
+  && rm -rf /usr/share/{doc,man}/* \
   && rm -rf /var/lib/apt/lists/*
 
 ADD mydumper.sh /mydumper.sh
