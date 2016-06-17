@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
     libpcre3-dev \
     python-sphinx \
 \
+  && cd /tmp \
   && wget https://launchpad.net/mydumper/$MYDUMPER_VERSION_MAJOR/$MYDUMPER_VERSION/+download/mydumper-$MYDUMPER_VERSION.tar.gz \
   && tar -xzvf mydumper-$MYDUMPER_VERSION.tar.gz \
   && cd mydumper-$MYDUMPER_VERSION \
@@ -22,8 +23,7 @@ RUN apt-get update && apt-get install -y \
   && make \
   && make install \
 \
-  && make clean \
-  && cd ../
+  && cd .. \
   && rm -rvf mydumper-$MYDUMPER_VERSION.tar.gz \
   && rm -rvf mydumper-$MYDUMPER_VERSION \
 \
@@ -34,6 +34,7 @@ RUN apt-get update && apt-get install -y \
     libmysqlclient15-dev \
     zlib1g-dev \
     libpcre3-dev \
+\
   && apt-get autoremove -y \
   && apt-get clean -y \
   && rm -rf /var/lib/apt/lists/*
